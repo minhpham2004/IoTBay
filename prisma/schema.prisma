@@ -23,7 +23,7 @@ model User {
 model Product {
   id          String   @id @default(uuid())
   name        String
-  price       Int
+  price       Float
   imageUrl    String
   description String
   createdAt   DateTime @default(now())
@@ -39,4 +39,17 @@ model Order {
   productId String
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payment   Payment?
+}
+
+model Payment {
+  id                String   @id @default(uuid())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  paymentCardNumber Int
+  paymentPassword   Int
+  paymentAmount     Float
+
+  orderId String @unique
+  order   Order  @relation(fields: [orderId], references: [id])
 }

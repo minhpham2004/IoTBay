@@ -8,7 +8,7 @@ export default function StaffLayout({
   return (
     <>
       <Navbar>
-        <NavLink href="/">Homepage</NavLink>
+        <NavLink href="/Home">Homepage</NavLink>
         <NavLink href="/staff">Dashboard</NavLink>
         <NavLink href="/staff/products">Products</NavLink>
         <NavLink href="/staff/users">Customers</NavLink>

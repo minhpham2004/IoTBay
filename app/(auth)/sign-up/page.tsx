@@ -55,7 +55,7 @@ function SignUp() {
     try {
       await signUp(values);
       localStorage.setItem("firstLogin", true.toString());
-      router.push("/");
+      router.push("/Home");
       toast.success("Sign up successfully");
     } catch (e) {
       console.log(e);

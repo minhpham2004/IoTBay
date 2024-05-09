@@ -52,3 +52,9 @@ CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Payment_orderId_key" ON "Payment"("orderId");
+
+ALTER TABLE "Product"
+ADD COLUMN "stock" INTEGER NOT NULL DEFAULT 0;
+
+ALTER TABLE "Product"
+ADD COLUMN "type" TEXT;

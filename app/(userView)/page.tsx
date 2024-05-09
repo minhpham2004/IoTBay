@@ -11,7 +11,8 @@ export default function Home() {
     if (!firstLogin) {
       router.push("/sign-in");
     }
+    else {
+      router.push("/Home");
+    }
   }, []);
-
-  if (firstLogin) return <>Hi Welcome</>;
 }

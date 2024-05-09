@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { signIn } from "./_actions/signin";
+
 import { error } from "console";
 import { toast } from "sonner";
 
@@ -47,7 +47,7 @@ function SignIn() {
       } else {
         toast.success("Sign in successfully");
         localStorage.setItem("firstLogin", true.toString());
-        router.push("/");
+        router.push("/Home");
       }
     } catch (e) {
       console.log(e);
@@ -108,10 +108,15 @@ function SignIn() {
             <Button style={{ marginTop: "20px" }} type="submit">
               Sign in
             </Button>
+            <Link href={"/Home"}>
+              <Button style={{ marginLeft: "12px" }} className="bg-blue-500 text-white" type="submit">
+                Guest
+              </Button>
+            </Link>
           </form>
         </Form>
         <p className="my-4">
-          You don't have an account?{" "}
+        You don&apos;t have an account?{" "}
           <Link href={"/sign-up"}>
             <span className="text-sm text-gray-600 cursor-pointer hover:underline">
               Register Now

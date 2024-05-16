@@ -7,7 +7,7 @@ export const LogOutButton = () => {
   const router = useRouter();
 
   const handleLogOut = () => {
-    localStorage.setItem("firstLogin", false.toString());
+    // localStorage.clear();
     router.push("/sign-in");
     setTimeout(() => {
       toast.success("Log out successfully");

@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
+import { db } from "@/lib/db";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -47,6 +48,7 @@ function SignIn() {
       } else {
         toast.success("Sign in successfully");
         localStorage.setItem("firstLogin", true.toString());
+        localStorage.setItem("userName", values.username);
         router.push("/");
       }
     } catch (e) {

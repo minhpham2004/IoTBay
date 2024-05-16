@@ -29,6 +29,8 @@ export async function signIn(data: any) {
     },
   });
 
+
+
   if (accountByUsername) {
     if (accountByUsername.password !== resultData.password) {
       return {
@@ -40,6 +42,7 @@ export async function signIn(data: any) {
         message: "success",
         data: {
           accountByUsername,
+          resultData,
         },
       };
     }

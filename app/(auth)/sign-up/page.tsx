@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { signUp } from "./_actions/signup";
 import { toast } from "sonner";
+import { CloudCog } from "lucide-react";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -55,6 +56,7 @@ function SignUp() {
     try {
       await signUp(values);
       localStorage.setItem("firstLogin", true.toString());
+      localStorage.setItem("userName", values.username);
       router.push("/");
       toast.success("Sign up successfully");
     } catch (e) {

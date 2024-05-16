@@ -39,4 +39,6 @@ export async function signUp(data: any) {
       phoneNumber: resultData.phone,
     },
   });
+
+
 }

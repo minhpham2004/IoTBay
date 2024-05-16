@@ -6,6 +6,8 @@ export default function Home() {
   const router = useRouter();
   const firstLoginString = localStorage.getItem("firstLogin");
   const firstLogin = Boolean(firstLoginString);
+  const userNameString = localStorage.getItem("userName");
+  const userName = String(userNameString);
 
   useEffect(() => {
     if (!firstLogin) {
@@ -13,5 +15,5 @@ export default function Home() {
     }
   }, []);
 
-  if (firstLogin) return <>Hi Welcome</>;
+  if (firstLogin && userName) return <>Hi Welcome</>;
 }

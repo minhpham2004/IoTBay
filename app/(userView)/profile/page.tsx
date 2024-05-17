@@ -75,7 +75,9 @@ function ProfilePage() {
       await UpdateUser(values, userData.id);
       localStorage.setItem("userName", values.username);
       alert("Data Successfully changed");
-      router.push("/");
+      if (confirmation){
+      router.push("/sign-in")
+     }
     }
     catch(error){
       console.log(error);
